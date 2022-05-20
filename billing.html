@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="billing.css">
+ 
+    <script src="scripts/jQuery.js"></script>
+    <script src="scripts/billing.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#delete").hide();
+            $("#icon").on("click", function(){
+                
+                $("#delete").show();
+                
+                if ($("#delete").is(":visible"))
+                    $("#icon").on("click", function(){
+                        $("#delete").hide()
+                    })
+
+
+            });
+            
+            $("#price, #quantity, #vat").keyup(function(){
+                var total=0;
+                var receipt=0;
+
+                var x = $("#price").val();
+                var y = $("#quantity").val();
+                var v = $("#vat").val();
+               
+
+                var total = x * y;
+                var totalTax= ((v/100 * x) * y)
+                var receipt=total + totalTax;
+
+                $("#total").val(total);
+                $("#subTotal").val(total);
+                $("#vatPercentage").val(totalTax)
+                $("#vatTotal").val(totalTax)
+                $("#receipt").val(receipt)
+       
+            })
+
+        
+  
+        })
+ 
+        
+    </script>
+<h1>Smartstore billing form</h1>
+<table id="myTable">
+    <tr>
+        <td>Description</td>
+        <td>Cost</td>
+        <td>Quantity</td>
+        <td>Vat(%)</td>
+        <td>Totals</td>
+        <td>Actions</td>
+    </tr>
+    <tr>
+        <td><input type="text" id="description" placeholder="Enter an item"></td>
+        <td><input type="number" id="price" value="0" placeholder=2000 required></td>
+        <td><input type="number" id="quantity" value="0" placeholder=4 required></td>
+        <td><input type="number" id="vat" value="0" placeholder=5 required></td>
+        <td><input type="number" id="total" disabled value=0></td>
+        <td><i class="fa fa-ellipsis-h" style="font-size:18px" id="icon"></i></td>
+        <td class="w3-panel w3-card-2" id="delete"><i class="fa fa-trash-o fa-fw" ></i> Delete</td>
+    </tr>
+</table>
+<button>Add item</button>
+<hr>
+<form action="" >
+    <div id="receipts">
+        <div>
+            <label for="">Subtotal</label>
+            <input type="text" id="subTotal" ><br>
+     
+            <label for="">VAT</label>
+            <input type="number" id="vatPercentage" ><br>
+     
+            <label for="">VAT Total</label>
+            <input type="text" id="vatTotal"><br>
+        
+
+        <hr>
+        <div>
+            <label for="" >Total</label>
+            <input type="number" id="receipt" value=0 disabled> 
+        </div>
+
+    </form>
+    </div>
+
+</body>
+</html>
