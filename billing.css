@@ -1,13 +1,75 @@
 body{
     margin: 0;
     padding: 0;
+   
 }
 
 #row{
     display: flex;
+
 }
 
 #receipts{
     display: flex;
     justify-content: flex-end;
+}
+
+#receipts, label, label{
+    color: blue;
+  
+}
+
+
+
+#icon{
+    color: black;
+    cursor: pointer;
+    text-align: center;
+} 
+#delete{
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border-radius: 10%;
+}
+
+input[type="number"] {
+    width: 120px;
+}
+
+input[type="text"] {
+    width: 400px;
+}
+
+
+tr, td{
+    color: blue;
+}
+
+h2{
+    background-color: blue;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#total, #subTotal, #vatPercentage, #vatTotal, #receipt{
+    background-color: white;
+    border: none;
+    text-align: center;
+    width: 100;
+}
+
+.btn{
+    background-color: purple;
+    color: white;
+}
+
+#sum{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+#subT, #vaT, #vaP{
+    font-weight: 400;
+    font-size: 20px;
 }

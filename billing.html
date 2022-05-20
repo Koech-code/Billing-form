@@ -6,10 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="billing.css">
- 
+    
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/jQuery.js"></script>
     <script src="scripts/billing.js"></script>
+    <link rel="stylesheet" href="billing.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,9 +27,8 @@
                 
                 if ($("#delete").is(":visible"))
                     $("#icon").on("click", function(){
-                        $("#delete").hide()
+                        $("#delete").toggle()
                     })
-
 
             });
             
@@ -52,52 +56,59 @@
         
   
         })
+        $("#delete").click(function(e){
+            $(this).closest('tr').remove()
+        })
  
         
     </script>
-<h1>Smartstore billing form</h1>
+
+<h2>Smartstore billing form</h2>
 <table id="myTable">
     <tr>
         <td>Description</td>
-        <td>Cost</td>
-        <td>Quantity</td>
-        <td>Vat(%)</td>
-        <td>Totals</td>
-        <td>Actions</td>
+        <td class="text-center">Cost</td>
+        <td class="text-center">Quantity</td>
+        <td class="text-center">Vat(%)</td>
+        <td class="text-center">Totals</td>
+        <td class="text-center">Actions</td>
     </tr>
     <tr>
-        <td><input type="text" id="description" placeholder="Enter an item"></td>
-        <td><input type="number" id="price" value="0" placeholder=2000 required></td>
-        <td><input type="number" id="quantity" value="0" placeholder=4 required></td>
-        <td><input type="number" id="vat" value="0" placeholder=5 required></td>
-        <td><input type="number" id="total" disabled value=0></td>
+        <td><input type="text" id="description" placeholder="Enter an item" class="form-control"></td>
+        <td><input type="number" id="price" value="0" class="text-center form-control" placeholder=2000 required></td>
+        <td><input type="number" id="quantity" value="0" class="text-center form-control" placeholder=4 required></td>
+        <td><input type="number" id="vat" value="0" class="text-center form-control" placeholder=5 required></td>
+        <td><input type="number" id="total" class="text-center" disabled value=0></td>
         <td><i class="fa fa-ellipsis-h" style="font-size:18px" id="icon"></i></td>
-        <td class="w3-panel w3-card-2" id="delete"><i class="fa fa-trash-o fa-fw" ></i> Delete</td>
+        <td class="w3-panel w3-card-2" onclick="myFunction()" id="delete"><i class="fa fa-trash-o fa-fw" ></i> Delete</td>
     </tr>
 </table>
-<button>Add item</button>
+<br>
+<button class="btn">Add item</button>
 <hr>
+
 <form action="" >
     <div id="receipts">
         <div>
-            <label for="">Subtotal</label>
-            <input type="text" id="subTotal" ><br>
+            <label for="subtotal" id="subT">Subtotal</label>
+            <input type="text" id="subTotal" disabled ><br>
      
-            <label for="">VAT</label>
-            <input type="number" id="vatPercentage" ><br>
+            <label for="vat" id="vaP">VAT</label>
+            <input type="text" id="vatPercentage" disabled><br>
      
-            <label for="">VAT Total</label>
-            <input type="text" id="vatTotal"><br>
-        
-
+            <label for="vat" id="vaT">VAT Total</label>
+            <input type="text" id="vatTotal" disabled><br>
+ 
         <hr>
         <div>
-            <label for="" >Total</label>
+            <label for="total" id="sum">Total</label>
             <input type="number" id="receipt" value=0 disabled> 
         </div>
 
     </form>
     </div>
+    </div>
+
 
 </body>
 </html>

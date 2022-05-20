@@ -5,7 +5,7 @@
 // let costInput=document.querySelector("#cost");
 // let quantityInput=document.querySelector("#quantity");
 // let vatInput=document.querySelector("#vat");
-// let totalsInput=document.querySelector("#totals");
+// let totalsInput=document.querySelector("#total");
 
 // addButton.addEventListener("click", () =>{
 //     let description=descriptionInput.value;
@@ -22,16 +22,12 @@
 //         <td>${vat}</td>
 //         <td>${totals}</td>
 //         // <td>Actions</td>
-//     </tr>
-//     // <tr>
-//     //     <td><input type="text" id="description" placeholder="Enter an item"></td>
-//     //     <td><input type="number" id="price" value="0" placeholder=2000 required></td>
-//     //     <td><input type="number" id="quantity" value="0" placeholder=4 required></td>
-//     //     <td><input type="number" id="vat" value="0" placeholder=5 required></td>
-//     //     <td><input type="number" id="totals" disabled value=0></td>
-//     //     <td><i class="fa fa-ellipsis-h" style="font-size:24px"></i></td>
-//     // </tr>
+
 //     `;
 
 //     addTable.innerHTML +=template;
 // })
+
+function myFunction() {
+    document.getElementById("myTable").deleteRow(0);
+  }
