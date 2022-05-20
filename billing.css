@@ -25,12 +25,13 @@ body{
     color: black;
     cursor: pointer;
     text-align: center;
+    
 } 
 #delete{
     cursor: pointer;
     background-color: red;
     color: white;
-    border-radius: 10%;
+    border-radius: 5px;
 }
 
 input[type="number"] {
@@ -55,8 +56,29 @@ h2{
 #total, #subTotal, #vatPercentage, #vatTotal, #receipt{
     background-color: white;
     border: none;
-    text-align: center;
     width: 100;
+    font-size:large;
+}
+
+#subTotal, #vatTotal{
+    text-align: center;
+    
+}
+
+#vatPercentage{
+    text-align: center;
+    padding-left: 20%;
+    
+}
+
+#receipt{
+   font-size:large;
+   margin-left: 42%;
+   color: green;
+}
+
+#subTotal{
+    padding-left: 3%;
 }
 
 .btn{
